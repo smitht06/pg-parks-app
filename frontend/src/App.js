@@ -1,16 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './bootstrap.css';
+import Header from './components/Header';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {Container} from 'react-bootstrap';
+import HomeScreen from './screens/HomeScreen';
 
 function App() {
-  return (
-    <>
-      <h1>Welcome to PG Parks!</h1>
-      <button type='submit'> this is a button</button>
-
-
-    </>
-  );
+	return (
+		<Router>
+		<Header/>
+			<main>
+				<Container>
+					<Route path="/" component={HomeScreen} exact/>
+				</Container>
+			</main>
+			<footer />
+		</Router>
+	);
 }
 
 export default App;
