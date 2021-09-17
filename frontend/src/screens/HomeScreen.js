@@ -1,15 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
+
+import { Image } from 'react-bootstrap';
 
 function HomeScreen() {
 	return (
         <>
-      
-		<div>
-			<h1>Welcome to PG Parks!</h1>
-			<button type='submit'> this is a button</button>
-			
-        </div>
+			<Image src='../images/mansion.png' fluid/>
         </>
 	);
 }
