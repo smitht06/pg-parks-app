@@ -2,12 +2,13 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 export default function Header() {
 	return (
 		<header>
 			<Navbar bg='primary' variant='dark' collapseOnSelect>
 				<Container>
-					<Navbar.Brand> <Image src='../images/clicktohome.png' fluid/></Navbar.Brand>
+					<Navbar.Brand><Link to='/'> <Image src='../images/clicktohome.png' fluid/></Link></Navbar.Brand>
 
 					<Nav className='ml-auto'>
 						<Nav.Link>
