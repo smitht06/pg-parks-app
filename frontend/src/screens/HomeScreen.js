@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
+import Login from '../components/Login';
 import SiteType from '../components/SiteType';
 import sitetypes from '../sitetypes';
 
@@ -15,6 +16,7 @@ function HomeScreen() {
 					</Col>
 				))}
 			</Row>
+			
 		</>
 	);
 }

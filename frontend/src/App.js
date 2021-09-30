@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import HomeScreen from './screens/HomeScreen';
 import SiteTypeScreen from './screens/SiteTypeScreen';
+import SiteScreen from './screens/SiteScreen';
+
 
 function App() {
 	return (
@@ -14,6 +16,7 @@ function App() {
 				<Container>
 					<Route path='/' component={HomeScreen} exact />
 					<Route path='/sitetype/:name' component={SiteTypeScreen}/>
+					<Route path='/:name/hi' component={SiteScreen}/>
 				</Container>
 				
 			</main>
