@@ -1,8 +1,7 @@
 import React from 'react';
 import sites from '../sites';
 import { Image, Row,Col } from 'react-bootstrap';
-import Login from '../components/Login'
-import RentalScreen from './RentalScreen';
+
 import rentals from '../rentals';
 import Rental from '../components/Rental';
 
@@ -22,10 +21,21 @@ const SiteScreen = ({ match }) => {
 				</Col>
 			</Row>
 
-		
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					<th scope="col">Type</th>
+					<th scope="col">Column heading</th>
+					<th scope="col">Column heading</th>
+					<th scope="col">Column heading</th>
+					</tr>
+				</thead>
+
 			{rentalFiltered.map((rental) => 
-			<Rental rental = {rental}></Rental>
+			<Rental rental = {rental}/>
 			)}
+
+			</table>
 			
 		</>
 	);
