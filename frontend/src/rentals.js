@@ -7,7 +7,7 @@ const rentals = [
     {
 		_id: 2,
 		name: 'Boat Rental',
-		site: 'Fairland Park'
+		site: 'Calvert Mansion'
 	},
     {
 		_id: 3,
@@ -17,7 +17,7 @@ const rentals = [
     {
 		_id: 4,
 		name: 'Boat Rental',
-		site: 'Fairland Park'
+		site: 'Calvert Mansion'
 	},
     {
 		_id: 5,
