@@ -1,13 +1,23 @@
 import React from 'react';
-import sites from '../sites';
+
 import { Image, Row,Col } from 'react-bootstrap';
 
 import rentals from '../rentals';
 import Rental from '../components/Rental';
 
 const SiteScreen = ({ match }) => {
-	const site = sites.find((p) => p.name === match.params.name);
+	
 	const rentalFiltered = rentals.filter((p) => p.site === match.params.name); 
+	const [site, setSite] = useState([]);
+
+	useEffect(() => {
+		const fetchSite = async () => {
+			const { data } = await axios.get('/api/sites');
+			setSite(data);
+		};
+		fetchSite();
+	}, []);
+
 
 	return (
 		<>
