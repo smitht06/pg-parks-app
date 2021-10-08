@@ -1,4 +1,7 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
+   
+import axios from 'axios';
 
 import { Image, Row,Col } from 'react-bootstrap';
 
@@ -12,7 +15,7 @@ const SiteScreen = ({ match }) => {
 
 	useEffect(() => {
 		const fetchSite = async () => {
-			const { data } = await axios.get('/api/sites');
+			const { data } = await axios.get(`/api/sites/${match.params.id}`);
 			setSite(data);
 		};
 		fetchSite();

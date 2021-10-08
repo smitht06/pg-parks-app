@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SiteType = ({ sitetype }) => {
 	return (
 		<Card className='my-3 p-3 rounded' style={{height:'15rem'}}>
-			<Link to={`sitetype/${sitetype.name}`}>
+			<Link to={`sitetype/${sitetype._id}`}>
 				<Card.Img src={sitetype.image} variant='top' style={{height:'10rem'}} />
 			</Link>
 			<Card.Body>

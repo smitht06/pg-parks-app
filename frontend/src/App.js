@@ -15,8 +15,8 @@ function App() {
 			<main>
 				<Container>
 					<Route path='/' component={HomeScreen} exact />
-					<Route path='/sitetype/:name' component={SiteTypeScreen}/>
-					<Route path='/:name/hi' component={SiteScreen}/>
+					<Route path='/sitetype/:id' component={SiteTypeScreen}/>
+					<Route path='/:name' component={SiteScreen}/>
 				</Container>
 				
 			</main>

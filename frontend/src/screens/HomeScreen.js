@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 import Login from '../components/Login';
 import SiteType from '../components/SiteType';
-import sitetypes from '../sitetypes';
+
 import React, { useState, useEffect } from 'react';
 
 function HomeScreen() {
