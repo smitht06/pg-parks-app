@@ -1,8 +1,16 @@
-const express = require('express');
-const sites = require('./data/sites');
-const rentals = require('./data/rentals');
-const sitetypes = require('./data/sitetypes');
+import express from 'express';
+import dotenv from 'dotenv';
+import sites from './data/sites.js';
+import rentals from './data/rentals.js';
+import sitetypes from './data/sitetypes.js';
+import connectDB from './config/db.js';
+import colors from 'colors';
+
+dotenv.config();
+connectDB();
+
 const app = express();
+
 
 app.get('/', (req, res) => {
 	res.send('API is running');
@@ -36,6 +44,9 @@ app.get('/api/sitetypes/:id/sites', (req, res) => {
 });
 
 
+const PORT = process.env.PORT || 5000
 
-
-app.listen(5000, console.log('Server running on port 5000'));
+app.listen(
+  PORT,
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+)

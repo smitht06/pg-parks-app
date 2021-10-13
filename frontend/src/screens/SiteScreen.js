@@ -24,7 +24,6 @@ const SiteScreen = ({ match }) => {
 
 	return (
 		<>
-		
 			<Row className='justify-content-md-center'>
 				<Col md={6}>
 					<h1>{site.name}</h1>
@@ -49,7 +48,6 @@ const SiteScreen = ({ match }) => {
 			)}
 
 			</table>
-			
 		</>
 	);
 };

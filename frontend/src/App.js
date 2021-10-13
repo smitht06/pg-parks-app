@@ -16,7 +16,7 @@ function App() {
 				<Container>
 					<Route path='/' component={HomeScreen} exact />
 					<Route path='/sitetype/:id' component={SiteTypeScreen}/>
-					<Route path='/:name' component={SiteScreen}/>
+					<Route path='/:id' component={SiteScreen}/>
 				</Container>
 				
 			</main>

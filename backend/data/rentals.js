@@ -31,4 +31,4 @@ const rentals = [
 	},
 ];
 
-module.exports = rentals;
+export default rentals;

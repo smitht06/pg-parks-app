@@ -28,15 +28,12 @@ const SiteTypeScreen = ({ match }) => {
 	}, []);
 
 	return (
-		
 		<>
-		{console.log(match.params.name)}
 			<Row className='justify-content-md-center'>
 				<Col md={6}>
 					<SiteType sitetype = {sitetype}/>
 				</Col>
 			</Row>
-			{console.log(match.params.id)}
 			{<Row>
 				{sitesFiltered.map((site) => (
 					<Col sm={12} md={6} lg={4} xl={3}>

@@ -28,4 +28,4 @@ const sitetypes = [
 	},
 ];
 
-module.exports = sitetypes;
+export default sitetypes;
