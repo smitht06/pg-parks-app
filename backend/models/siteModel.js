@@ -11,9 +11,9 @@ const siteSchema = mongoose.Schema(
 			required: true,
 		},
 		type: {
-			type: mongoose.Schema.Types.ObjectId,
+			type: String,
 			required: true,
-			ref: 'SiteType',
+			ref: 'SiteType'
 		},
         description: {
 			type: String,

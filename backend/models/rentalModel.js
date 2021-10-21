@@ -7,7 +7,7 @@ const rentalSchema = mongoose.Schema(
 			required: true,
 		},
 		site: {
-			type: mongoose.Schema.Types.ObjectId,
+			type: String,
 			required: true,
 			ref: 'Site',
 		},
