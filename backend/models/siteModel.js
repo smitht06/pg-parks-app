@@ -13,7 +13,7 @@ const siteSchema = mongoose.Schema(
 		type: {
 			type: String,
 			required: true,
-			ref: 'SiteType'
+			
 		},
         description: {
 			type: String,
