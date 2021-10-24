@@ -29,6 +29,9 @@ jobs:
       - name: Run a multi-line script
         run: |
           npm install
+          cd frontend
+          npm install
+          cd ..
           ls
           npm run dev
           
