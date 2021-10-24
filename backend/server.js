@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import siteTypeRoutes from './routes/siteTypeRoutes.js';
 import rentals from './data/rentals.js';
-
 import connectDB from './config/db.js';
 import colors from 'colors';
 import siteRoutes from './routes/siteRoutes.js';
