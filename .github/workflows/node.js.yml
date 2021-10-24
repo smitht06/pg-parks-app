@@ -21,5 +21,7 @@ jobs:
 
     steps:
    
-    - run: npm run dev
+    - run: |
+          ls
+          npm run dev
    
