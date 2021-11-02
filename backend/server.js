@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import siteTypeRoutes from './routes/siteTypeRoutes.js';
-import rentals from './data/rentals.js';
+import rentalRoutes from './routes/rentalRoutes.js'
 import connectDB from './config/db.js';
 import colors from 'colors';
 import siteRoutes from './routes/siteRoutes.js';
@@ -15,19 +15,11 @@ app.get('/', (req, res) => {
 	res.send('API is running');
 });
 
-
-
 app.use('/api/sites', siteRoutes);
 
 app.use('/api/sitetypes', siteTypeRoutes);
 
-app.get('/api/rentals', (req, res) => {
-	res.json(rentals);
-});
-
-
-
-
+app.use('/api/rentals', rentalRoutes)
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,17 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
-   
 import axios from 'axios';
-
 import { Image, Row,Col } from 'react-bootstrap';
-
-import rentals from '../rentals';
 import Rental from '../components/Rental';
 
 const SiteScreen = ({ match }) => {
 	
-	const rentalFiltered = rentals.filter((p) => p.site === match.params.name); 
+	
 	const [site, setSite] = useState([]);
+	const [rentals, setRentals] = useState([]);
+	
+	useEffect(() => {
+		const fetchSite = async () => {
+			const { data } = await axios.get(`/api/sites/${match.params.id}/rentals`);
+			setRentals(data);
+		};
+		fetchSite();
+	}, []);
 
 	useEffect(() => {
 		const fetchSite = async () => {
@@ -20,6 +25,8 @@ const SiteScreen = ({ match }) => {
 		};
 		fetchSite();
 	}, []);
+
+
 
 
 	return (
@@ -43,7 +50,7 @@ const SiteScreen = ({ match }) => {
 					</tr>
 				</thead>
 
-			{rentalFiltered.map((rental) => 
+			{rentals.map((rental) => 
 			<Rental rental = {rental}/>
 			)}
 
