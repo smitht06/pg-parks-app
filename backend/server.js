@@ -5,9 +5,13 @@ import rentalRoutes from './routes/rentalRoutes.js'
 import connectDB from './config/db.js';
 import colors from 'colors';
 import siteRoutes from './routes/siteRoutes.js';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 dotenv.config();
 connectDB();
+
+
+
 
 const app = express();
 
@@ -20,6 +24,9 @@ app.use('/api/sites', siteRoutes);
 app.use('/api/sitetypes', siteTypeRoutes);
 
 app.use('/api/rentals', rentalRoutes)
+
+app.use(notFound)
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000;
 

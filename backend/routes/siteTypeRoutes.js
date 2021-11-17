@@ -26,7 +26,8 @@ router.get(
 		if (siteType) {
 			res.json(siteType);
 		} else {
-			res.status(404).json({ message: 'site not found' });
+			res.status(404)
+      		throw new Error('Product not found')
 		}
 	})
 );
@@ -41,7 +42,8 @@ router.get(
 		if (sitesFiltered) {
 			res.json(sitesFiltered);
 		} else {
-			res.status(404).json({ message: 'sites not found' });
+			res.status(404)
+      		throw new Error('Product not found')
 		}
 	})
 );

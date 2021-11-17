@@ -3,30 +3,36 @@ import { Row, Col } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 import Login from '../components/Login';
 import SiteType from '../components/SiteType';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector} from 'react-redux'
+import { listSiteTypes } from '../actions/siteTypeActions';
 
-import React, { useState, useEffect } from 'react';
 
 function HomeScreen() {
-	const [sitetypes, setSitetypes] = useState([]);
+	const dispatch = useDispatch();
+	const siteTypeList = useSelector((state) => state.siteTypeList)
+    const { loading, error, siteTypes } = siteTypeList
 
 	useEffect(() => {
-		const fetchSitetypes = async () => {
-			const { data } = await axios.get('/api/sitetypes');
-			setSitetypes(data);
-		};
-		fetchSitetypes();
-	}, []);
+		dispatch(listSiteTypes())
+	  }, [dispatch])
 
 	return (
 		<>
 			<Image src='../images/mansion.png' fluid />
-			<Row>
-				{sitetypes.map((sitetype) => (
-					<Col sm={12} md={6} lg={4} xl={3}>
-						<SiteType sitetype={sitetype} />
-					</Col>
-				))}
-			</Row>
+			{loading ? (
+        		<h2>Loading...</h2>
+      		) : error ? (
+        		<h3>{error}</h3>
+      		) : (
+        <Row>
+          {siteTypes.map((siteType) => (
+            <Col key={siteType._id} sm={12} md={6} lg={4} xl={3}>
+              <SiteType siteType={siteType} />
+            </Col>
+          ))}
+        </Row>
+      )}
 		</>
 	);
 }
