@@ -15,7 +15,7 @@ function HomeScreen() {
 
 	useEffect(() => {
 		dispatch(listSiteTypes())
-	  }, [dispatch])
+	}, [dispatch])
 
 	return (
 		<>
@@ -26,9 +26,9 @@ function HomeScreen() {
         		<h3>{error}</h3>
       		) : (
         <Row>
-          {siteTypes.map((siteType) => (
-            <Col key={siteType._id} sm={12} md={6} lg={4} xl={3}>
-              <SiteType siteType={siteType} />
+          {siteTypes.map((sitetype) => (
+            <Col key={sitetype._id} sm={12} md={6} lg={4} xl={3}>
+              <SiteType sitetype={sitetype} />
             </Col>
           ))}
         </Row>
