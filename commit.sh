@@ -1,3 +1,3 @@
 git add .
-git commit -m "redux store working for site types"
+git commit -m "added message and loader components"
 git push origin master

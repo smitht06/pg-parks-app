@@ -6,7 +6,8 @@ import SiteType from '../components/SiteType';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector} from 'react-redux'
 import { listSiteTypes } from '../actions/siteTypeActions';
-
+import Message from '../components/Message'
+import Loader from '../components/Loader'
 
 function HomeScreen() {
 	const dispatch = useDispatch();
@@ -21,9 +22,10 @@ function HomeScreen() {
 		<>
 			<Image src='../images/mansion.png' fluid />
 			{loading ? (
-        		<h2>Loading...</h2>
+        		
+				<Loader/>
       		) : error ? (
-        		<h3>{error}</h3>
+        		<Message variant='danger'>{error}</Message>
       		) : (
         <Row>
           {siteTypes.map((sitetype) => (
