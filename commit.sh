@@ -1,3 +1,3 @@
 git add .
-git commit -m "added message and loader components"
+git commit -m "added list sites store"
 git push origin master

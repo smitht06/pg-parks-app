@@ -17,4 +17,4 @@ const Site = ({ site, type }) => {
 	);
 };
 
-export default Site;
+export default Site

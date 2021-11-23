@@ -20,6 +20,7 @@ function HomeScreen() {
 
 	return (
 		<>
+			{console.log(siteTypes)}
 			<Image src='../images/mansion.png' fluid />
 			{loading ? (
         		

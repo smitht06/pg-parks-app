@@ -5,6 +5,10 @@ import {
     SITETYPE_DETAILS_REQUEST,
     SITETYPE_DETAILS_SUCCESS,
     SITETYPE_DETAILS_FAIL,
+    SITETYPE_SITES_REQUEST,
+    SITETYPE_SITES_SUCCESS,
+    SITETYPE_SITES_FAIL,
+    
   } from '../constants/siteTypeConstants'
   
   export const siteTypeListReducer = (state = { siteTypes: [] }, action) => {
@@ -14,6 +18,19 @@ import {
       case SITETYPE_LIST_SUCCESS:
         return { loading: false, siteTypes: action.payload }
       case SITETYPE_LIST_FAIL:
+        return { loading: false, error: action.payload }
+      default:
+        return state
+    }
+  }
+
+  export const sitesFilteredListReducer = (state = { sitesFiltered: [] }, action) => {
+    switch (action.type) {
+      case SITETYPE_SITES_REQUEST:
+        return { loading: true, sitesFiltered: [] }
+      case SITETYPE_SITES_SUCCESS:
+        return { loading: false, sitesFiltered: action.payload }
+      case SITETYPE_SITES_FAIL:
         return { loading: false, error: action.payload }
       default:
         return state

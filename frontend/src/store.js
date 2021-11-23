@@ -1,11 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { siteTypeListReducer, siteTypeDetailsReducer } from './reducers/siteTypeReducers'
+import { siteTypeListReducer, siteTypeDetailsReducer, sitesFilteredListReducer } from './reducers/siteTypeReducers'
+
 
 const reducer = combineReducers({
   siteTypeList: siteTypeListReducer,
-  siteTypeDetails: siteTypeDetailsReducer
+  siteTypeDetails: siteTypeDetailsReducer,
+  sitesFilteredList: sitesFilteredListReducer,
 })
 
 const initialState = {}
